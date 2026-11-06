@@ -1,0 +1,52 @@
+Brief of what we did:
+1. got back 200 years to know what Dhanbad was part of before Jharkhand:
+1826 -- Assam joined Bengal
+1836 -- North western provinces, Bengal from the Bengal (border-Bihar)
+1905 -- Eastern Bengal province, Assam province and Bengal province from Bengal 
+1912 -- Bihar province, Orissa province from Bengal province
+2000 -- Jharkhand from Bihar
+understood: the importance of searching the word "Manbhum"
+references:
+- 1877: A Statistical Account Of Bengal - Vol.17 - https://archive.org/details/dli.bengal.10689.2816/page/n13/mode/2up
+- 1905: Linguistic Survey Of India Vol V Part Ii - https://archive.org/details/in.ernet.dli.2015.73105/page/n13/mode/2up
+Decided to base the further search under "Vanishing Voices of Manbhum"
+
+2. used .txt of 1911 Manbhum from archive.org (a: https://archive.org/stream/manbhum01coup/manbhum01coup_djvu.txt) & analysed using voyant tools
+findings:
+- a high prevalence of a never heard word - "ghatwal*" - 166 times [2nd word]
+- chakran - 12 times [3rd word]
+- panchak* (panchak, panchaki)- 1o times [4th word]
+- found various words that were not specific to our region Manbhum or chotanagpur: barkandaz, sebundies, saranjami, amils, kistbandi
+- Project-scope/region specific words that need more references:
+i. dhowras, korkar & khandit,  - 1 time each 3
+ii. kami* (5): kamiya (2), kamiyas (1), kami (1), kamihi (1)
+*came across a local story from clicking kamdeva (1) - can be studied later
+Decided to not find more words, enough references and meaning search in the next step.
+
+3. dhowras done very easily as dhowrahs from 1935 The Calcutta Gazette (b: https://archive.org/details/in.ernet.dli.2015.43938/mode/2up) with meaning of the term: "Dhowrah" means a house used or in-tended to be used by colliery labourers.
+*the site was hanging (maybe 'cause the text was big), another source: 1952 Industrial Housing in India had 25 occurrences of this mining related term (c: https://archive.org/details/in.ernet.dli.2015.223666)
+
+Kamin: Lahiri-Dutt's 2006 paper (d: https://www.researchgate.net/publication/314669387_Kamins_Building_the_Empire_Class_Caste_and_Gender_Interface_in_Indian_Collieries) proved the presence of this word; there was also a new 2026 book by author Jyoti Sinha called Struggle and Survival of the Kamins (https://books.google.co.in/books/about/Struggle_and_Survival_of_the_Kamins.html?id=RjDl0QEACAAJ&redir_esc=y) but it was not accessible
+
+Kamia, etc.: got clarity that they are non-mining terms; agrarian debt-bondage term used across Bihar (e: https://www.researchgate.net/publication/342409939_The_Abolition_of_Bonded_Labour_and_Slavery_in_India_From_'Poor_Law'_to_a_Fundamental_Right_-_the_Gradual_Changes_of_an_Institution_1843-1990)
+
+
+4. while finalising the organisation/meaning/references of words, got across pdfs like (f) https://ia801406.us.archive.org/15/items/in.ernet.dli.2015.123779/2015.123779.Dictionary-Of-Law-And-Usage-And-Guide-To-Legal-Translation_text.pdf to create 1st basic schema of word|meaning|reference
+1. मानभुम / Manbhum | The name of the area encompassing Dhanbad, Purulia & Bokaro | a
+2. घाटवाली / ghatwali | system where local people held land and revenue right for protecting passes | a
+3. धौड़ा / dhowrah | Used in mining regulations to define standardized, company-owned tenement lines built for colliery workers | b, c, a
+4. कमीन / Kamin | Colloquial term used across Jharia and Raniganj for female surface and underground coal basket loaders who worked alongside male coal-cutters/miners | d
+5. कमिया / Kamiya (Kamauti System) | A landless agricultural laborer bound to a landlord through hereditary debt-bondage. | e, a
+6. चाकरान / chakran | plots of land granted rent-free to village servants or local public officials instead of paying them a regular cash salary. | f, a
+7. पंचक / panchak | an extra historical tax or fee that local landlords (zamindars) charged tenants on top of their standard land rent. | f, a
+
+5. modified schema to account for the following and writing content
+- meaning, active usage span & geographic scope
+- cause of obsolescence & archival provenance
+
+6. categorising based on time (>200, >100, >50) and thinking what type/domain the word is; then finally thinking and planning the frontend
+
+7. claude and gemini was used for writing code and content respectively
+
+
+LEFT: heard orally from an 80yr old, who was foreman in bccl, but didn't add: khol (mine entry), mainer (miner), kamini (earned money from job)
