@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanishing Voices of Manbhum: a digital archive of obsolete words</title>
+<meta name="description" content="Seven words from the Manbhum borderland that fell out of use when laws, borders and industries changed, each traced to a source.">
+<link rel="icon" href="data:,">
+<style>
+:root{--paper:#edeee8;--ink:#14202b;--muted:#4b5864;--rule:#b8c0c4;--accent:#1c5560;--tint:#dce5e5;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--paper:#12181d;--ink:#e6e9ea;--muted:#a0acb4;--rule:#2d3b45;--accent:#74b8c4;--tint:#1b2830}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.7 "Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+[lang=hi]{font-family:"Noto Serif Devanagari","Nirmala UI",Mangal,serif}
+[lang=bn]{font-family:"Noto Serif Bengali","Nirmala UI",Vrinda,serif}
+a{color:var(--accent);text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.ui,nav,.chip,.btn,.badge,.hits,.strip,.meta-list strong{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.muted{color:var(--muted)}
+.skip,.sr{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:9;background:var(--paper);padding:.5rem 1rem}
+.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 1.5rem;min-height:3.5rem}
+.brand{font-weight:700;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 1.25rem;font-size:.92rem}
+nav a{color:var(--ink);padding:.75rem 0;text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.hero{padding:clamp(2.5rem,8vw,6rem) 0 3.5rem}
+h1{font-size:clamp(2.6rem,7.5vw,5rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:16ch}
+.premise{font-size:1.2rem;max-width:38rem;margin:0 0 .75rem}
+#stats{margin:0;font-size:.95rem}
+.hero-words{display:flex;flex-wrap:wrap;gap:.2rem 1.6rem;margin:2.25rem 0 0;padding-top:1rem;border-top:3px solid var(--accent);font-size:clamp(1.7rem,4.8vw,2.7rem);line-height:1.35}
+.hero-words a{color:var(--ink);text-decoration-color:var(--rule)}
+.hero-words a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+section{padding:3rem 0;border-top:1px solid var(--rule)}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.15;margin:0 0 .75rem}
+h3{margin:0}
+.lede{max-width:40rem;margin:0 0 1rem;color:var(--muted)}
+.prose{max-width:40rem}
+.prose p{margin:0 0 1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 1rem}
+.chip,.btn{font-size:.9rem;line-height:1.3;text-align:left;background:transparent;color:var(--ink);border:1px solid var(--rule);padding:.55rem .9rem;min-height:44px;cursor:pointer}
+.chip small{display:block;color:var(--muted);font-size:.78rem}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.chip[aria-pressed=true] small{color:inherit;opacity:.9}
+.lexicon-card{display:grid;gap:1rem 2.5rem;padding:2rem 0;border-top:1px solid var(--rule);scroll-margin-top:4.5rem}
+.lexicon-card[hidden]{display:none}
+.lexicon-card h3{font-size:1.65rem;line-height:1.25;font-weight:600;margin-bottom:.75rem}
+.lexicon-card:target h3{box-shadow:inset 4px 0 var(--accent);padding-left:.7rem}
+.badge{display:inline-block;font-size:.78rem;line-height:1.3;padding:.2rem .55rem;border:1px solid var(--rule);margin:0 .35rem .35rem 0}
+.badge.stratum{background:var(--tint);border-color:transparent;color:var(--accent);font-weight:600}
+.badge.domain{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.btn:hover,.chip:hover{border-color:var(--accent)}
+.meta-list{list-style:none;margin:0;padding:0}
+.meta-list>li{padding:.6rem 0;border-bottom:1px dotted var(--rule)}
+.meta-list>li:last-child{border:0}
+.meta-list strong{display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.1rem}
+.source-list{margin:.3rem 0 0;padding-left:1.3rem}
+.source-list li{margin-bottom:.4rem}
+@media(min-width:820px){.lexicon-card{grid-template-columns:16rem 1fr}.lexicon-card>header{position:sticky;top:5rem;align-self:start}}
+.ledger{list-style:none;margin:2rem 0 0;padding:0}
+.ledger li{display:grid;grid-template-columns:minmax(6.5rem,9rem) 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--rule)}
+.yr{font-size:clamp(1.4rem,3.5vw,2rem);line-height:1.1;font-weight:600;color:var(--accent)}
+.ledger p{margin:0 0 .3rem}
+.hits{font-size:.9rem;color:var(--muted)}
+h3.sub{font-size:1.1rem;margin:2rem 0 .5rem}
+.strip{list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.75rem 0;font-size:.95rem;line-height:1.4}
+.strip li{flex:1 1 9rem;padding:.8rem .75rem 0 0;border-top:3px solid var(--accent)}
+.strip small{display:block;color:var(--muted)}
+.refs{padding-left:1.2rem;max-width:46rem}
+.refs li{margin-bottom:.6rem}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+footer p{margin:0 0 .3rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#archive">Skip to the words</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top">Vanishing Voices</a>
+<nav aria-label="Sections"><a href="#archive">Words</a><a href="#vanished">How they vanished</a><a href="#method">Method</a><a href="#sources">Sources</a></nav>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<h1>Vanishing Voices of Manbhum</h1>
+<p class="premise">Seven words from the Manbhum borderland, the region around modern Dhanbad, Purulia and Bokaro, that fell out of use when laws, borders and industries changed. Each word is traced to a source.</p>
+<p class="muted" id="stats">7 words from 6 sources in 3 eras.</p>
+<p class="hero-words" lang="hi"><a href="#manbhum" aria-label="Mānbhūm">मानभूम</a>
+<a href="#ghatwali" aria-label="Ghāṭwālī">घाटवाली</a>
+<a href="#dhowrah" aria-label="Dhowrah">धौड़ा</a>
+<a href="#kamin" aria-label="Kamīn">कमीन</a>
+<a href="#kamiya" aria-label="Kamiya">कमिया</a>
+<a href="#chakran" aria-label="Chākarān">चाकरान</a>
+<a href="#panchak" aria-label="Panchak">पंचक</a></p>
+</div></div>
+
+<section id="archive"><div class="wrap">
+<h2>The words</h2>
+<p class="lede">Filter by era. Every entry has its own link and a citation you can copy.</p>
+<div class="chips" role="group" aria-label="Filter by era">
+<button class="chip" type="button" data-f="all" aria-pressed="true"><b>All</b> <span class="n"></span><small>Every era</small></button>
+<button class="chip" type="button" data-f="gt-200" aria-pressed="false"><b>&gt;200 yr</b> <span class="n"></span><small>Feudal / pre-colonial</small></button>
+<button class="chip" type="button" data-f="gt-100" aria-pressed="false"><b>&gt;100 yr</b> <span class="n"></span><small>Early industrial</small></button>
+<button class="chip" type="button" data-f="gt-50" aria-pressed="false"><b>&gt;50 yr</b> <span class="n"></span><small>Late colonial to nationalisation</small></button>
+</div>
+<div id="cards">
+<article class="lexicon-card" id="manbhum" data-term="Mānbhūm" data-stratum="gt-200">
+  <header>
+    <h3><span lang="bn">মানভূম</span> / <span lang="hi">मानभूम</span> (Mānbhūm)</h3>
+    <span class="badge stratum">&gt;200 yr Old</span>
+    <span class="badge domain">Territorial / Administrative Geography</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> The historical regional designation encompassing modern Dhanbad, Purulia, and parts of Bokaro; serving as the dialectal transition zone between western Bengali and eastern Hindi/Magahi varieties.</li>
+    <li><strong>Active Usage Span:</strong> Late 18th Century – 1956</li>
+    <li><strong>Geographic Scope:</strong> Manbhum District (Jungle Mahals &rarr; Bengal Presidency &rarr; Bihar &rarr; split 1956).</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Administrative & Cartographic Reorganization</em>. Dissolved under the States Reorganisation Act (1956), bifurcating the territory between Purulia (West Bengal) and Dhanbad (Bihar, now Jharkhand).</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. II: History.
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="ghatwali" data-term="Ghāṭwālī" data-stratum="gt-200">
+  <header>
+    <h3><span lang="bn">ঘাটওয়ালী</span> / <span lang="hi">घाटवाली</span> (Ghāṭwālī)</h3>
+    <span class="badge stratum">&gt;200 yr Old</span>
+    <span class="badge domain">Feudal Defense / Land Tenure</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> A quasi-military system where local indigenous chieftains and wardens (Ghatwals) were granted hereditary rent-free or low-quit-rent land rights in exchange for guarding strategic hill passes (ghats) against invaders and bandits.</li>
+    <li><strong>Active Usage Span:</strong> Pre-Colonial (~1765) – 1950</li>
+    <li><strong>Geographic Scope:</strong> Chota Nagpur & Manbhum border passes (Bengal Presidency).</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Statutory Abolition of Service Lands</em>. Made obsolete by modern police administrations and formally dissolved by the Bihar Land Reforms Act of 1950.</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. XI: Land Revenue Administration ("Police Tenures in Manbhum").
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="dhowrah" data-term="Dhowrah" data-stratum="gt-50">
+  <header>
+    <h3><span lang="hi">धौड़ा</span> / Dhowrah (Dhaura)</h3>
+    <span class="badge stratum">&gt;50 yr Old</span>
+    <span class="badge domain">Industrial Settlement / Company Housing</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> Standardized, compact tenement lines built by private coal companies under colonial municipal guidelines to house migrant colliery labor, superseding the concept of an ancestral village (basti).</li>
+    <li><strong>Active Usage Span:</strong> c. 1920 – 1971/1973</li>
+    <li><strong>Geographic Scope:</strong> Jharia Coalfield, Dhanbad.</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Nationalisation & Modern Public Sector Housing</em>. The 1971–1973 Coking and Non-Coking Coal Nationalisation Acts transferred housing to BCCL/CIL, replacing private barrack allocations with institutional quarters.</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          <em>The Calcutta Gazette</em> (1935), Statutory Rules under the Jharia Mines Board of Health, Part II, Bylaw 6: "Construction of Dhowrahs".
+          <a href="https://archive.org/details/in.ernet.dli.2015.43938/mode/2up" target="_blank" rel="noopener noreferrer">[Gazette Archive Link]</a>
+        </li>
+        <li>
+          <em>Industrial Housing In India</em>, documenting colliery housing and sanitation in the Bihar-Bengal coal belt.
+          <a href="https://archive.org/details/in.ernet.dli.2015.223666" target="_blank" rel="noopener noreferrer">[Housing Survey Link]</a>
+        </li>
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. VI: Mines and Minerals (early colliery settlement notes).
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="kamin" data-term="Kamīn" data-stratum="gt-100">
+  <header>
+    <h3><span lang="hi">कमीन</span> / <span lang="bn">কামিন</span> (Kamīn)</h3>
+    <span class="badge stratum">&gt;100 yr Old</span>
+    <span class="badge domain">Colliery Labor / Gendered Occupational Argot</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> Colloquial term across the Jharia and Raniganj coalfields for female surface and underground coal loaders, operating within a family labor gang alongside a male coal cutter who cut the seam.</li>
+    <li><strong>Active Usage Span:</strong> c. 1890 – 1939</li>
+    <li><strong>Geographic Scope:</strong> Jharia & Raniganj Colliery Belts (Dhanbad & Burdwan).</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Legislative Prohibition of Female Underground Labor</em>. Phased out by colonial mining regulations in 1929 and strictly enacted in 1939, excluding women from pithead coal-carrying operations.</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          Dr. Kuntala Lahiri-Dutt, <em>"Kamins Building the Empire: Class, Caste, and Gender Interface in Indian Collieries"</em> (2006).
+          <a href="https://www.researchgate.net/publication/314669387_Kamins_Building_the_Empire_Class_Caste_and_Gender_Interface_in_Indian_Collieries" target="_blank" rel="noopener noreferrer">[Scholarly Text Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="kamiya" data-term="Kamiya" data-stratum="gt-100">
+  <header>
+    <h3><span lang="hi">कमिया</span> / Kamiya (Kamauti System)</h3>
+    <span class="badge stratum">&gt;100 yr Old</span>
+    <span class="badge domain">Agrarian Law / Unfree Labor</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> A landless agricultural laborer bound to a landlord through hereditary debt-bondage; compelled to provide manual field labor in return for subsistence grain, with no realistic capacity to extinguish the debt.</li>
+    <li><strong>Active Usage Span:</strong> 19th Century – 1920 (Statutory ban)</li>
+    <li><strong>Geographic Scope:</strong> Chota Nagpur & Southern Bihar Plains (Palamu, Gaya, Hazaribagh borders).</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Statutory Abolition</em>. Declared unlawful under the Bihar and Orissa Kamiauti Agreements Act (1920), which voided long-term labor pledges.</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          <em>The Abolition of Bonded Labour and Slavery in India: From 'Poor Law' to a Fundamental Right – the Gradual Changes of an Institution 1843–1990</em> (Section analyzing the Kamiya system and the 1920 Kamiauti Agreements Act).
+          <a href="https://www.researchgate.net/publication/342409939_The_Abolition_of_Bonded_Labour_and_Slavery_in_India_From_'Poor_Law'_to_a_Fundamental_Right_-_the_Gradual_Changes_of_an_Institution_1843-1990" target="_blank" rel="noopener noreferrer">[ResearchGate PDF Link]</a>
+        </li>
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. VIII: Occupations and Landless Labor.
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="chakran" data-term="Chākarān" data-stratum="gt-200">
+  <header>
+    <h3><span lang="hi">चाकरान</span> / <span lang="bn">চাকরান</span> (Chākarān)</h3>
+    <span class="badge stratum">&gt;200 yr Old</span>
+    <span class="badge domain">Feudal Tenure / Rural Policing</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> Parcels of agricultural land granted rent-free or on nominal terms to village retainers, watchmen (chowkidars), and local public officers in lieu of fixed cash salaries.</li>
+    <li><strong>Active Usage Span:</strong> Mughal Era – 1950s</li>
+    <li><strong>Geographic Scope:</strong> Bengal Presidency & Manbhum District.</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Monetization of Rural Administration</em>. The resumption of service lands by provincial governments and the subsequent 1950 Zamindari abolition replaced tenure-based compensation with direct cash salaries.</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          Durga Prasad, <em>Dictionary of Law and Usage and Guide to Legal Translation</em> (defining Chakran service lands).
+          <a href="https://ia801406.us.archive.org/15/items/in.ernet.dli.2015.123779/2015.123779.Dictionary-Of-Law-And-Usage-And-Guide-To-Legal-Translation_text.pdf" target="_blank" rel="noopener noreferrer">[Legal Dictionary Text Archive]</a>
+        </li>
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. XI: Land Revenue Administration ("Chaukidari Chakran lands").
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article class="lexicon-card" id="panchak" data-term="Panchak" data-stratum="gt-200">
+  <header>
+    <h3><span lang="hi">पंचक</span> / <span lang="bn">পাঞ্চক</span> (Panchak)</h3>
+    <span class="badge stratum">&gt;200 yr Old</span>
+    <span class="badge domain">Agrarian Law / Land Revenue</span>
+  </header>
+  
+  <ul class="meta-list">
+    <li><strong>Definition:</strong> A supplementary quit-rent or quit-tribute assessed on privileged holdings; in the Manbhum borderland, it specifically designated the nominal rent paid by subordinate Ghatwals to superior Zamindars.</li>
+    <li><strong>Active Usage Span:</strong> Pre-Colonial (~1765) – 1950</li>
+    <li><strong>Geographic Scope:</strong> Manbhum, Bankura, and Chota Nagpur frontier estates.</li>
+    <li><strong>Cause of Obsolescence:</strong> <em>Statutory Abolition of Feudal Intermediaries</em>. The abolition of intermediate agrarian rent tiers under the Bihar Land Reforms Act (1950) unified all land payments into a uniform state assessment (lagaan).</li>
+    <li class="meta-provenance">
+      <strong>Archival Provenance:</strong>
+      <ol class="source-list">
+        <li>
+          Durga Prasad, <em>Dictionary of Law and Usage and Guide to Legal Translation</em> (defining extra assessments and cesses).
+          <a href="https://ia801406.us.archive.org/15/items/in.ernet.dli.2015.123779/2015.123779.Dictionary-Of-Law-And-Usage-And-Guide-To-Legal-Translation_text.pdf" target="_blank" rel="noopener noreferrer">[Legal Dictionary Text Archive]</a>
+        </li>
+        <li>
+          H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911), Ch. XI: Land Revenue Administration (Panchak rates on service tenures).
+          <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">[Archive.org Link]</a>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+</div>
+</div></section>
+
+<section id="vanished"><div class="wrap">
+<h2>How the words vanished</h2>
+<p class="lede">Five legal and administrative changes account for all seven words.</p>
+<ol class="ledger">
+<li><span class="yr">1920</span><div><p>The Bihar and Orissa Kamiauti Agreements Act declared long-term labour pledges unlawful.</p><p class="hits">Retired: <a href="#kamiya">Kamiya</a></p></div></li>
+<li><span class="yr">1939</span><div><p>Colonial mining regulations, phased in from 1929 and strictly enacted in 1939, excluded women from colliery coal-carrying work.</p><p class="hits">Retired: <a href="#kamin">Kamīn</a></p></div></li>
+<li><span class="yr">1950</span><div><p>The Bihar Land Reforms Act and the abolition of zamindari ended service-land and intermediate-rent tenures.</p><p class="hits">Retired: <a href="#ghatwali">Ghāṭwālī</a>, <a href="#chakran">Chākarān</a>, <a href="#panchak">Panchak</a></p></div></li>
+<li><span class="yr">1956</span><div><p>The States Reorganisation Act divided Manbhum between Purulia in West Bengal and Dhanbad in Bihar, now Jharkhand.</p><p class="hits">Retired: <a href="#manbhum">Mānbhūm</a></p></div></li>
+<li><span class="yr">1971–73</span><div><p>The Coking and Non-Coking Coal Nationalisation Acts moved colliery housing to BCCL and CIL.</p><p class="hits">Retired: <a href="#dhowrah">Dhowrah</a></p></div></li>
+</ol>
+</div></section>
+
+<section id="method"><div class="wrap">
+<h2>Method</h2>
+<div class="prose">
+<p>The starting point was the 1911 Manbhum District Gazetteer. Its full text was analysed with Voyant Tools to surface recurring terms that are unfamiliar today. Candidate words were then traced in further printed and scholarly sources.</p>
+<p>A word is included when it has a verifiable source, belongs to Manbhum, Chota Nagpur or the Jharia coalfield, and went out of use because a law, a border or an industry changed. Words that could not be traced to a source are left out.</p>
+<p>Each entry gives a definition, a usage span, a geographic scope, the cause of obsolescence and its provenance. Entries are grouped into three eras: feudal and pre-colonial (more than 200 years), early industrial (more than 100 years) and late colonial to nationalisation (more than 50 years).</p>
+</div>
+<h3 class="sub">Where the region sat administratively</h3>
+<ol class="strip">
+<li><b>Jungle Mahals</b></li>
+<li><b>Bengal Presidency</b></li>
+<li><b>Bihar and Orissa</b><small>from 1912</small></li>
+<li><b>Bihar</b><small>Manbhum split in 1956</small></li>
+<li><b>Jharkhand</b><small>from 2000</small></li>
+</ol>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<h2>Sources</h2>
+<h3 class="sub">Cited in the entries</h3>
+<ul class="refs">
+<li>H. Coupland, <em>Bengal District Gazetteers: Manbhum</em> (1911). <a href="https://archive.org/details/manbhum01coup" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+<li><em>The Calcutta Gazette</em> (October–December 1935). <a href="https://archive.org/details/in.ernet.dli.2015.43938/mode/2up" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+<li><em>Industrial Housing in India</em> (1952). <a href="https://archive.org/details/in.ernet.dli.2015.223666" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+<li>Kuntala Lahiri-Dutt, “Kamins Building the Empire: Class, Caste, and Gender Interface in Indian Collieries” (2006). <a href="https://www.researchgate.net/publication/314669387_Kamins_Building_the_Empire_Class_Caste_and_Gender_Interface_in_Indian_Collieries" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+<li>“The Abolition of Bonded Labour and Slavery in India: From ‘Poor Law’ to a Fundamental Right, the Gradual Changes of an Institution 1843–1990”. <a href="https://www.researchgate.net/publication/342409939_The_Abolition_of_Bonded_Labour_and_Slavery_in_India_From_'Poor_Law'_to_a_Fundamental_Right_-_the_Gradual_Changes_of_an_Institution_1843-1990" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+<li>Durga Prasad, <em>Dictionary of Law and Usage and Guide to Legal Translation</em>. <a href="https://ia801406.us.archive.org/15/items/in.ernet.dli.2015.123779/2015.123779.Dictionary-Of-Law-And-Usage-And-Guide-To-Legal-Translation_text.pdf" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+</ul>
+<h3 class="sub">Consulted for regional context</h3>
+<ul class="refs">
+<li><em>A Statistical Account of Bengal</em>, Vol. 17 (1877). <a href="https://archive.org/details/dli.bengal.10689.2816/page/n13/mode/2up" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+<li><em>Linguistic Survey of India</em>, Vol. V, Part II (1905). <a href="https://archive.org/details/in.ernet.dli.2015.73105/page/n13/mode/2up" target="_blank" rel="noopener noreferrer">Archive.org</a></li>
+</ul>
+</div></section>
+</main>
+<footer><div class="wrap">
+<p>Vanishing Voices of Manbhum, 2026.</p>
+<p>A Digital Humanities archive project, Department of Humanities and Social Sciences, IIT (ISM) Dhanbad.</p>
+</div></footer>
+<div class="sr" id="live" role="status" aria-live="polite"></div>
+<script>
+(function(){
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var cards=$$('.lexicon-card'),chips=$$('.chip'),live=$('#live');
+var eras={};cards.forEach(function(c){eras[c.dataset.stratum]=1});
+var src={};$$('.source-list a').forEach(function(a){src[a.href]=1});
+$('#stats').textContent=cards.length+' words from '+Object.keys(src).length+' sources in '+Object.keys(eras).length+' eras.';
+chips.forEach(function(b){var f=b.dataset.f;$('.n',b).textContent='('+(f==='all'?cards.length:cards.filter(function(c){return c.dataset.stratum===f}).length)+')'});
+function setFilter(f){var k=0;chips.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f)});cards.forEach(function(c){var h=f!=='all'&&c.dataset.stratum!==f;c.hidden=h;if(!h)k++});live.textContent='Showing '+k+' of '+cards.length+' words'}
+chips.forEach(function(b){b.addEventListener('click',function(){setFilter(b.dataset.f)})});
+function copy(t,msg,btn){
+function done(){var o=btn.textContent;btn.textContent=msg;live.textContent=msg;setTimeout(function(){btn.textContent=o},1800)}
+function fb(){var a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);done()}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fb)}else{fb()}}
+cards.forEach(function(c){
+var d=document.createElement('div');d.className='actions';
+d.innerHTML='<button class="btn" type="button">Copy citation</button><button class="btn" type="button">Copy link</button>';
+var b=d.children;
+b[0].onclick=function(){var base=location.href.split('#')[0],dt=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+copy('Vanishing Voices Archive (2026). \u201C'+c.dataset.term+'\u201D. IIT (ISM) Dhanbad. '+base+'#'+c.id+' (Accessed: '+dt+').','Citation copied',b[0])};
+b[1].onclick=function(){copy(location.href.split('#')[0]+'#'+c.id,'Link copied',b[1])};
+$('header',c).appendChild(d)});
+function jump(){var id=decodeURIComponent(location.hash.slice(1)),el=id&&document.getElementById(id);if(el&&el.hidden){setFilter('all');el.scrollIntoView()}}
+addEventListener('hashchange',jump);jump();
+})();
+</script>
+</body>
+</html>
