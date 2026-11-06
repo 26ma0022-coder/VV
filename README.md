@@ -4,14 +4,12 @@ A small digital archive of seven words from the Manbhum borderland (the region a
 
 Built as a team project for the Digital Humanities course, Department of Humanities and Social Sciences, IIT (ISM) Dhanbad, 2026.
 
-**Live site:** [ADD GITHUB PAGES URL HERE]
+**Live site:** [[Click Here](https://26ma0022-coder.github.io/VV/)]
 
 ## Team
 
-- [Name]
-- [Name]
-- [Name]
-- [Name]
+- [Soni Kumari (26MA0022) {contribution: navigating the project}]
+- [Jyoti Rajak (26MA0012) {contribution: content editing}]
 
 ## The seven words
 
