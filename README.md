@@ -8,8 +8,8 @@ Built as a team project for the Digital Humanities course, Department of Humanit
 
 ## Team
 
-- [Soni Kumari (26MA0022) {contribution: navigating the project}]
-- [Jyoti Rajak (26MA0012) {contribution: content editing}]
+- Soni Kumari (26MA0022) {contribution: navigating the project}
+- Jyoti Rajak (26MA0012) {contribution: content editing}
 
 ## The seven words
 
